@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Forum National des Infirmiers Superviseurs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="top-strip">
+  <div class="container">
+    <span>République Démocratique du Congo · Plateforme officielle du Forum</span>
+    <a href="contact.html">Nous contacter →</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 12.5L10.2 15.7L17 8.3" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="4.5" y="4.5" width="15" height="15" rx="3.2" stroke="#FFFFFF" stroke-width="1.6"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong>Forum National des Infirmiers Superviseurs</strong>
+        <span>République Démocratique du Congo</span>
+      </span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="ressources.html">Ressources</a>
+      <a href="formations.html">Formations</a>
+      <a href="espace-membre.html">Espace Membre</a>
+      <a href="contact.html" class="is-active">Contact</a>
+      <a href="inscription.html" class="btn btn-primary">Devenir membre</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Accueil</a> / Contact</div>
+      <h1>Contactez le Forum</h1>
+      <p>Une question sur votre inscription, une formation ou une ressource ? Écrivez-nous.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid" style="margin-bottom:40px;">
+        <div class="contact-card reveal">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6.5 12 13l9-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          <div>
+            <h4>Email</h4>
+            <p> contact@fonis-rdc.org<br><span style="font-size:12.5px;">(adresse à activer)</span></p>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M6.5 4h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2C10.8 19 5 13.2 4.5 6.2A2 2 0 0 1 6.5 4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+          <div>
+            <h4>Téléphone</h4>
+            <p>+243 81 879 6761 <br><span style="font-size:12.5px;">(numéro à activer)</span></p>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          <div>
+            <h4>Adresse</h4>
+            <p>Kinshasa, République Démocratique du Congo</p>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          <div>
+            <h4>Heures de réponse</h4>
+            <p>Du lundi au vendredi, 8h – 16h (heure de Kinshasa)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-wrap reveal" style="max-width:640px;">
+        <h3 style="margin-bottom:6px;">Envoyer un message</h3>
+        <p style="color:var(--ink-500);font-size:14px;margin-bottom:24px;">Pour rejoindre le forum, utilisez plutôt la page <a href="inscription.html">Inscription</a>.</p>
+
+        <!--
+          Remplacez YOUR_FORM_ID par votre identifiant Formspree (voir inscription.html
+          pour les instructions). Ce formulaire utilise l'envoi standard du navigateur :
+          après l'envoi, Formspree affiche sa propre page de confirmation.
+        -->
+        <form action="https://formspree.io/contact@fonis-rdc.org" method="POST">
+          <input type="hidden" name="_subject" value="Message — Contact Forum Infirmiers Superviseurs">
+          <div class="form-grid">
+            <div class="field">
+              <label for="c_nom">Nom complet <span class="req">*</span></label>
+              <input type="text" id="c_nom" name="Nom complet" required>
+            </div>
+            <div class="field">
+              <label for="c_email">Email <span class="req">*</span></label>
+              <input type="email" id="c_email" name="Email" required>
+            </div>
+            <div class="field full">
+              <label for="c_sujet">Sujet <span class="req">*</span></label>
+              <input type="text" id="c_sujet" name="Sujet" required>
+            </div>
+            <div class="field full">
+              <label for="c_message">Message <span class="req">*</span></label>
+              <textarea id="c_message" name="Message" rows="5" required style="font-family:var(--font-body);font-size:14.5px;padding:11px 13px;border:1px solid var(--paper-200);border-radius:4px;background:var(--paper-0);resize:vertical;"></textarea>
+            </div>
+          </div>
+          <div class="form-footer" style="justify-content:flex-end;">
+            <button type="submit" class="btn btn-primary">Envoyer le message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 12.5L10.2 15.7L17 8.3" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="4.5" y="4.5" width="15" height="15" rx="3.2" stroke="#FFFFFF" stroke-width="1.6"/>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <strong>Forum National des Infirmiers Superviseurs</strong>
+            <span>République Démocratique du Congo</span>
+          </span>
+        </a>
+        <p>Un réseau national qui unit les infirmiers superviseurs de toutes les provinces au service d'un système de santé plus fort.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="ressources.html">Ressources</a></li>
+          <li><a href="formations.html">Formations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Forum</h5>
+        <ul>
+          <li><a href="espace-membre.html">Espace Membre</a></li>
+          <li><a href="inscription.html">Devenir membre</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Liens utiles</h5>
+        <ul>
+          <li><a href="https://sante.gouv.cd" target="_blank" rel="noopener">Ministère de la Santé</a></li>
+          <li><a href="https://www.insp.cd" target="_blank" rel="noopener">INSP</a></li>
+          <li><a href="https://www.who.int/fr" target="_blank" rel="noopener">OMS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Forum National des Infirmiers Superviseurs — RDC. Tous droits réservés.</span>
+      <span>Site indépendant du Forum · non affilié au Ministère de la Santé</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

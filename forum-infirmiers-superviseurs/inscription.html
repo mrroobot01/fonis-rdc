@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscription — Forum National des Infirmiers Superviseurs</title>
+<meta name="description" content="Inscrivez-vous au Forum National des Infirmiers Superviseurs en RDC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="top-strip">
+  <div class="container">
+    <span>République Démocratique du Congo · Plateforme officielle du Forum</span>
+    <a href="contact.html">Nous contacter →</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 12.5L10.2 15.7L17 8.3" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="4.5" y="4.5" width="15" height="15" rx="3.2" stroke="#FFFFFF" stroke-width="1.6"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong>Forum National des Infirmiers Superviseurs</strong>
+        <span>République Démocratique du Congo</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Accueil</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="ressources.html">Ressources</a>
+      <a href="formations.html">Formations</a>
+      <a href="espace-membre.html">Espace Membre</a>
+      <a href="contact.html">Contact</a>
+      <a href="inscription.html" class="btn btn-primary is-active">Devenir membre</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Accueil</a> / Inscription</div>
+      <h1>Rejoindre le Forum National</h1>
+      <p>Remplissez ce formulaire pour devenir membre du Forum National des Infirmiers Superviseurs. Vos informations nous permettent de mieux organiser le réseau par province et par fonction.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="inscription-layout">
+
+        <div class="form-wrap reveal">
+          <!--
+            Ce formulaire envoie chaque inscription à contact@fonis-rdc.org via Formspree.
+            IMPORTANT — la toute première fois que quelqu'un soumet ce formulaire,
+            Formspree envoie un email de confirmation à contact@fonis-rdc.org.
+            Il faut ouvrir cet email et cliquer sur le lien de confirmation pour
+            activer l'envoi — sinon les inscriptions suivantes ne seront pas livrées.
+          -->
+          <form id="inscription-form" action="https://formspree.io/contact@fonis-rdc.org" method="POST">
+            <input type="hidden" name="_subject" value="Nouvelle inscription — Forum National des Infirmiers Superviseurs">
+            <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off">
+
+            <div class="form-section-title">Identité</div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="nom">Nom <span class="req">*</span></label>
+                <input type="text" id="nom" name="Nom" required autocomplete="family-name">
+              </div>
+              <div class="field">
+                <label for="postnom">Postnom <span class="req">*</span></label>
+                <input type="text" id="postnom" name="Postnom" required>
+              </div>
+              <div class="field">
+                <label for="prenom">Prénom <span class="req">*</span></label>
+                <input type="text" id="prenom" name="Prénom" required autocomplete="given-name">
+              </div>
+              <div class="field">
+                <label for="province">Votre province <span class="req">*</span></label>
+                <select id="province" name="Province" required>
+                  <option value="" disabled selected>Sélectionnez votre province</option>
+                  <option>Kinshasa</option>
+                  <option>Kongo-Central</option>
+                  <option>Kwango</option>
+                  <option>Kwilu</option>
+                  <option>Mai-Ndombe</option>
+                  <option>Kasaï</option>
+                  <option>Kasaï-Central</option>
+                  <option>Kasaï-Oriental</option>
+                  <option>Lomami</option>
+                  <option>Sankuru</option>
+                  <option>Maniema</option>
+                  <option>Sud-Kivu</option>
+                  <option>Nord-Kivu</option>
+                  <option>Ituri</option>
+                  <option>Haut-Uele</option>
+                  <option>Bas-Uele</option>
+                  <option>Tshopo</option>
+                  <option>Tshuapa</option>
+                  <option>Équateur</option>
+                  <option>Sud-Ubangi</option>
+                  <option>Nord-Ubangi</option>
+                  <option>Mongala</option>
+                  <option>Haut-Katanga</option>
+                  <option>Haut-Lomami</option>
+                  <option>Lualaba</option>
+                  <option>Tanganyika</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-section-title">Lieu d'affectation</div>
+            <div class="form-grid">
+              <div class="field full">
+                <label for="lieu_affectation">Lieu d'affectation <span class="req">*</span></label>
+                <select id="lieu_affectation" name="Lieu d'affectation" required>
+                  <option value="" disabled selected>Sélectionnez votre lieu d'affectation</option>
+                  <option>Secrétariat général</option>
+                  <option>Division Provinciale de la Santé</option>
+                  <option>Antenne</option>
+                  <option>Coordination</option>
+                  <option>Zone de santé</option>
+                </select>
+                <span class="hint">Si vous choisissez "Secrétariat général", des précisions supplémentaires vous seront demandées.</span>
+              </div>
+
+              <div class="conditional-block" id="bloc-secretariat-general">
+                <div class="field">
+                  <label for="secgen_type">Précisez <span class="req">*</span></label>
+                  <select id="secgen_type" name="Secrétariat général — Type" data-required-when-visible="true">
+                    <option value="" disabled selected>Choisissez une option</option>
+                    <option>Programme spécialisé</option>
+                    <option>Direction</option>
+                  </select>
+                </div>
+                <div class="field" id="field-programme" style="display:none;">
+                  <label for="programme_nom">Nom du programme spécialisé <span class="req">*</span></label>
+                  <input type="text" id="programme_nom" name="Nom du programme spécialisé">
+                </div>
+                <div class="field" id="field-direction" style="display:none;">
+                  <label for="direction_nom">Nom de la direction <span class="req">*</span></label>
+                  <input type="text" id="direction_nom" name="Nom de la direction">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section-title">Fonction</div>
+            <div class="form-grid">
+              <div class="field full">
+                <label for="fonction">Votre fonction <span class="req">*</span></label>
+                <select id="fonction" name="Fonction" required>
+                  <option value="" disabled selected>Sélectionnez votre fonction</option>
+                  <option value="Infirmier superviseur">Infirmier superviseur</option>
+                  <option value="Analyste">Analyste</option>
+                  <option value="Logisticien">Logisticien</option>
+                  <option value="Autre">Autre</option>
+                </select>
+              </div>
+
+              <div class="field full" id="field-activite-supervision" style="display:none;">
+                <label for="activite_supervision">Chargé(e) de quelle activité ? <span class="req">*</span></label>
+                <input type="text" id="activite_supervision" name="Infirmier superviseur — Activité" placeholder="Ex : supervision des soins maternels, suivi de la vaccination…">
+              </div>
+
+              <div class="field full" id="field-autre-fonction" style="display:none;">
+                <label for="autre_fonction">Précisez votre fonction <span class="req">*</span></label>
+                <input type="text" id="autre_fonction" name="Autre fonction — Précision" placeholder="Décrivez votre fonction">
+              </div>
+            </div>
+
+            <div class="form-section-title">Statut</div>
+            <div class="form-grid">
+              <div class="field">
+                <label>Vous êtes salarié <span class="req">*</span></label>
+                <div class="radio-row">
+                  <label class="radio-opt"><input type="radio" name="Salarié" value="Oui" required> Oui</label>
+                  <label class="radio-opt"><input type="radio" name="Salarié" value="Non" required> Non</label>
+                </div>
+              </div>
+              <div class="field">
+                <label>Vous êtes primé(e) <span class="req">*</span></label>
+                <div class="radio-row">
+                  <label class="radio-opt"><input type="radio" name="Primé" value="Oui" required> Oui</label>
+                  <label class="radio-opt"><input type="radio" name="Primé" value="Non" required> Non</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="annee_affectation">Votre année d'affectation <span class="req">*</span></label>
+                <input type="number" id="annee_affectation" name="Année d'affectation" min="1960" max="2026" placeholder="Ex : 2019" required>
+              </div>
+            </div>
+
+            <div class="form-footer">
+              <label class="consent">
+                <input type="checkbox" required>
+                J'accepte que ces informations soient utilisées par le Forum National des Infirmiers Superviseurs pour la gestion des membres.
+              </label>
+              <button type="submit" class="btn btn-primary" id="submit-btn">S'inscrire</button>
+            </div>
+
+            <div class="form-status" id="form-status" role="status"></div>
+          </form>
+        </div>
+
+        <aside class="sidebar-note reveal">
+          <h4>Avant de commencer</h4>
+          <p>Préparez ces informations pour un remplissage rapide :</p>
+          <ul>
+            <li>Votre nom complet (Nom, Postnom, Prénom)</li>
+            <li>Votre province et lieu d'affectation exact</li>
+            <li>Votre fonction actuelle sur le terrain</li>
+            <li>Votre année d'entrée en fonction</li>
+          </ul>
+          <p style="margin-top:18px;">Une fois envoyé, votre dossier est transmis à l'équipe du Forum, qui vous recontactera par les moyens indiqués sur la page <a href="contact.html">Contact</a>.</p>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 12.5L10.2 15.7L17 8.3" stroke="#FFFFFF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="4.5" y="4.5" width="15" height="15" rx="3.2" stroke="#FFFFFF" stroke-width="1.6"/>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <strong>Forum National des Infirmiers Superviseurs</strong>
+            <span>République Démocratique du Congo</span>
+          </span>
+        </a>
+        <p>Un réseau national qui unit les infirmiers superviseurs de toutes les provinces au service d'un système de santé plus fort.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="ressources.html">Ressources</a></li>
+          <li><a href="formations.html">Formations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Forum</h5>
+        <ul>
+          <li><a href="espace-membre.html">Espace Membre</a></li>
+          <li><a href="inscription.html">Devenir membre</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Liens utiles</h5>
+        <ul>
+          <li><a href="https://sante.gouv.cd" target="_blank" rel="noopener">Ministère de la Santé</a></li>
+          <li><a href="https://www.insp.cd" target="_blank" rel="noopener">INSP</a></li>
+          <li><a href="https://www.who.int/fr" target="_blank" rel="noopener">OMS</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Forum National des Infirmiers Superviseurs — RDC. Tous droits réservés.</span>
+      <span>Site indépendant du Forum · non affilié au Ministère de la Santé</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
