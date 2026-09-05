@@ -156,7 +156,11 @@ button{font-family:inherit;}
   display:flex;align-items:center;justify-content:center;
   flex:none;
 }
-.brand-mark svg{width:26px;height:26px;}
+.brand-mark svg{display:none;}
+.brand-mark{
+  background:url('../assets/hero-photo.jpg.jpeg') center/cover no-repeat;
+  background-color:var(--teal-700);
+}
 .brand-text{line-height:1.15;}
 .brand-text strong{
   display:block;
@@ -796,6 +800,12 @@ button{font-family:inherit;}
   outline:none;
   box-shadow:0 0 0 3px var(--teal-100);
 }
+.field.has-error input,
+.field.has-error select{
+  border-color:var(--clay-600);
+  box-shadow:0 0 0 3px rgba(184,65,44,0.15);
+}
+.field.has-error label{color:var(--clay-600);}
 .radio-row{display:flex;gap:18px;flex-wrap:wrap;padding-top:4px;}
 .radio-opt{
   display:flex;align-items:center;gap:8px;
