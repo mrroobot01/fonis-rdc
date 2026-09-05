@@ -96,8 +96,10 @@
           pour les instructions). Ce formulaire utilise l'envoi standard du navigateur :
           après l'envoi, Formspree affiche sa propre page de confirmation.
         -->
-        <form action="https://formspree.io/fabricefuamba@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Message — Contact Forum Infirmiers Superviseurs">
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="_gotcha">
+          <input type="hidden" name="form-name" value="contact">
+          <input type="hidden" name="_next" value="merci.html">
+          <input type="hidden" name="_gotcha" style="display:none">
           <div class="form-grid">
             <div class="field">
               <label for="c_nom">Nom complet <span class="req">*</span></label>

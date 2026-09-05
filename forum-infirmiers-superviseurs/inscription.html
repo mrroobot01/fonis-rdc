@@ -71,10 +71,10 @@
             Il faut ouvrir cet email et cliquer sur le lien de confirmation pour
             activer l'envoi — sinon les inscriptions suivantes ne seront pas livrées.
           -->
-          <form id="inscription-form" action="https://formspree.io/contact@fonis-rdc.org" method="POST">
-            <input type="hidden" name="_subject" value="Nouvelle inscription — Forum National des Infirmiers Superviseurs">
+                    <form id="inscription-form" name="inscription" method="POST" data-netlify="true" netlify-honeypot="_gotcha">
+            <input type="hidden" name="form-name" value="inscription">
+            <input type="hidden" name="_next" value="merci.html">
             <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off">
-
             <div class="form-section-title">Identité</div>
             <div class="form-grid">
               <div class="field">

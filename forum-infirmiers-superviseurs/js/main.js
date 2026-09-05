@@ -90,6 +90,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+    /* ------------------------------------------------------------------
+     Custom validation highlighting — replaces the generic browser
+     tooltip with a red-bordered field + inline message, and scrolls
+     to the first problem field.
+     ------------------------------------------------------------------ */
+  function clearFieldErrors() {
+    form.querySelectorAll('.field.has-error').forEach(f => f.classList.remove('has-error'));
+  }
+
+  function highlightInvalidFields() {
+    clearFieldErrors();
+    const invalids = Array.from(form.querySelectorAll(':invalid')).filter(el => el.offsetParent !== null);
+    invalids.forEach(el => {
+      const field = el.closest('.field');
+      if (field) field.classList.add('has-error');
+    });
+    if (invalids.length) {
+      const firstField = invalids[0].closest('.field') || invalids[0];
+      firstField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      invalids[0].focus({ preventScroll: true });
+    }
+    return invalids.length === 0;
+  }
+
+  form.querySelectorAll('input, select').forEach(el => {
+    el.addEventListener('input', () => {
+      const field = el.closest('.field');
+      if (field && field.classList.contains('has-error') && el.checkValidity()) {
+        field.classList.remove('has-error');
+      }
+    });
+  });
+
   /* ------------------------------------------------------------------
      Submission — sends to Formspree so submissions arrive by email.
      Replace YOUR_FORM_ID in the form's action attribute (see HTML)
@@ -106,38 +139,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (honeypot && honeypot.value) return;
 
     if (!form.checkValidity()) {
-      form.reportValidity();
+      highlightInvalidFields();
+      showStatus('error', 'Merci de corriger le(s) champ(s) surligné(s) en rouge ci-dessus.');
       return;
     }
-
-    const endpoint = form.getAttribute('action') || '';
-    const isPlaceholder = endpoint.includes('YOUR_FORM_ID');
+    clearFieldErrors();
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Envoi en cours…';
 
-    if (isPlaceholder) {
-      // No real endpoint configured yet — show a clear message instead of failing silently.
-      setTimeout(() => {
-        showStatus('error', "Le formulaire n'est pas encore connecté à une adresse de réception. Configurez votre identifiant Formspree dans inscription.html avant la mise en ligne.");
-        submitBtn.disabled = false;
-        submitBtn.textContent = "S'inscrire";
-      }, 400);
-      return;
+    function encodeForNetlify(data) {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        .join('&');
     }
 
     try {
       const formData = new FormData(form);
-      const response = await fetch(endpoint, {
+      const dataObj = {};
+      formData.forEach((value, key) => { dataObj[key] = value; });
+
+      const response = await fetch('/', {
         method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeForNetlify(dataObj)
       });
 
       if (response.ok) {
-        form.reset();
-        secGeneralBlock && secGeneralBlock.classList.remove('is-visible');
-        showStatus('success', 'Merci ! Votre inscription a bien été envoyée. Notre équipe reviendra vers vous prochainement.');
+        const redirectTo = form.querySelector('input[name="_next"]');
+        window.location.href = redirectTo ? redirectTo.value : 'merci.html';
       } else {
         showStatus('error', "Une erreur est survenue lors de l'envoi. Merci de réessayer dans un instant.");
       }
