@@ -64,17 +64,11 @@
       <div class="inscription-layout">
 
         <div class="form-wrap reveal">
-          <!--
-            Ce formulaire envoie chaque inscription à contact@fonis-rdc.org via Formspree.
-            IMPORTANT — la toute première fois que quelqu'un soumet ce formulaire,
-            Formspree envoie un email de confirmation à contact@fonis-rdc.org.
-            Il faut ouvrir cet email et cliquer sur le lien de confirmation pour
-            activer l'envoi — sinon les inscriptions suivantes ne seront pas livrées.
-          -->
-                    <form id="inscription-form" name="inscription" method="POST" data-netlify="true" netlify-honeypot="_gotcha">
+          <form id="inscription-form" name="inscription" method="POST" data-netlify="true" netlify-honeypot="_gotcha">
             <input type="hidden" name="form-name" value="inscription">
             <input type="hidden" name="_next" value="merci.html">
             <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off">
+
             <div class="form-section-title">Identité</div>
             <div class="form-grid">
               <div class="field">
@@ -88,6 +82,10 @@
               <div class="field">
                 <label for="prenom">Prénom <span class="req">*</span></label>
                 <input type="text" id="prenom" name="Prénom" required autocomplete="given-name">
+              </div>
+              <div class="field">
+                <label for="telephone">Numéro de téléphone <span class="req">*</span></label>
+                <input type="tel" id="telephone" name="Téléphone" placeholder="Ex : 0812345678" pattern="^[+0-9 ]{8,15}$" required autocomplete="tel">
               </div>
               <div class="field">
                 <label for="province">Votre province <span class="req">*</span></label>
@@ -182,7 +180,7 @@
               </div>
             </div>
 
-                       <div class="form-section-title">Numéro d'ordre</div>
+            <div class="form-section-title">Numéro d'ordre</div>
             <div class="form-grid">
               <div class="field">
                 <label>Avez-vous un numéro d'ordre ? <span class="req">*</span></label>
@@ -196,6 +194,11 @@
                 <input type="text" id="numero_ordre_valeur" name="Numéro d'ordre — Valeur" placeholder="Ex : 123456">
               </div>
             </div>
+
+            <div class="form-section-title">Statut</div>
+            <div class="form-grid">
+              <div class="field">
+                <label>Vous êtes salarié <span class="req">*</span></label>
                 <div class="radio-row">
                   <label class="radio-opt"><input type="radio" name="Salarié" value="Oui" required> Oui</label>
                   <label class="radio-opt"><input type="radio" name="Salarié" value="Non" required> Non</label>
@@ -231,6 +234,7 @@
           <p>Préparez ces informations pour un remplissage rapide :</p>
           <ul>
             <li>Votre nom complet (Nom, Postnom, Prénom)</li>
+            <li>Votre numéro de téléphone</li>
             <li>Votre province et lieu d'affectation exact</li>
             <li>Votre fonction actuelle sur le terrain</li>
             <li>Votre année d'entrée en fonction</li>
