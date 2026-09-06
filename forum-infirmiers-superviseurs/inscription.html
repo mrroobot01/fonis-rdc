@@ -182,10 +182,20 @@
               </div>
             </div>
 
-            <div class="form-section-title">Statut</div>
+                       <div class="form-section-title">Numéro d'ordre</div>
             <div class="form-grid">
               <div class="field">
-                <label>Vous êtes salarié <span class="req">*</span></label>
+                <label>Avez-vous un numéro d'ordre ? <span class="req">*</span></label>
+                <div class="radio-row">
+                  <label class="radio-opt"><input type="radio" id="numero_ordre_oui" name="Numéro d'ordre" value="Oui" required> Oui</label>
+                  <label class="radio-opt"><input type="radio" name="Numéro d'ordre" value="Non" required> Non</label>
+                </div>
+              </div>
+              <div class="field" id="field-numero-ordre" style="display:none;">
+                <label for="numero_ordre_valeur">Lequel ? <span class="req">*</span></label>
+                <input type="text" id="numero_ordre_valeur" name="Numéro d'ordre — Valeur" placeholder="Ex : 123456">
+              </div>
+            </div>
                 <div class="radio-row">
                   <label class="radio-opt"><input type="radio" name="Salarié" value="Oui" required> Oui</label>
                   <label class="radio-opt"><input type="radio" name="Salarié" value="Non" required> Non</label>

@@ -72,8 +72,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Fonction: show sub-fields based on choice
-  const fonctionSelect = document.getElementById('fonction');
+    // Numéro d'ordre: show text field only if "Oui"
+  const numeroOrdreOui = document.getElementById('numero_ordre_oui');
+  const numeroOrdreAll = document.querySelectorAll('input[name="Numéro d\'ordre"]');
+  const numeroOrdreField = document.getElementById('field-numero-ordre');
+  if (numeroOrdreAll.length && numeroOrdreField) {
+    numeroOrdreAll.forEach(radio => {
+      radio.addEventListener('change', () => {
+        const showField = numeroOrdreOui.checked;
+        numeroOrdreField.style.display = showField ? '' : 'none';
+        const input = numeroOrdreField.querySelector('input');
+        if (input) input.required = showField;
+      });
+    });
+  }
   const fonctionSubFields = {
     'Infirmier superviseur': document.getElementById('field-activite-supervision'),
     'Autre': document.getElementById('field-autre-fonction')
