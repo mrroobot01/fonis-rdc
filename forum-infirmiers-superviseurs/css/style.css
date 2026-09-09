@@ -868,8 +868,8 @@ legend{padding:0;}
   display:none;
 }
 .form-status.show{display:block;}
-.form-status.success{background:var(--green-100);color:#1e5535;border:1px solid #bfe0cb;}
-.form-status.error{background:#fbe6e0;color:#7a2c1b;border:1px solid #f0c3b3;}
+.form-status.info{background:var(--teal-100);color:var(--teal-900);border:1px solid #b9d4e8;}
+.form-status.info a{color:var(--teal-900);font-weight:700;text-decoration:underline;}
 
 .sidebar-note{
   background:var(--teal-100);

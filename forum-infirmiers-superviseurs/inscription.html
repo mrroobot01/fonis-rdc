@@ -63,7 +63,10 @@
     <div class="container">
       <div class="inscription-layout">
 
-        <div class="form-wrap reveal">
+                <div class="form-wrap reveal">
+          <div class="form-status info" id="already-submitted-banner" style="display:none;">
+            Vous vous êtes déjà inscrit(e) depuis cet appareil. Si vous pensez qu'il s'agit d'une erreur ou si vous devez soumettre un autre dossier (par exemple pour un collègue), <a href="contact.html">contactez-nous</a>, ou <a href="#" id="reset-submission-lock">cliquez ici</a> si ce n'était pas vous.
+          </div>
           <form id="inscription-form" name="inscription" method="POST" data-netlify="true" netlify-honeypot="_gotcha">
             <input type="hidden" name="form-name" value="inscription">
             <input type="hidden" name="_next" value="merci.html">

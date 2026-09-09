@@ -39,6 +39,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('inscription-form');
   if (!form) return;
 
+  /* ------------------------------------------------------------------
+     Empêche une double soumission depuis le même appareil/navigateur.
+     ------------------------------------------------------------------ */
+  const SUBMISSION_LOCK_KEY = 'fonis_inscription_submitted';
+  const alreadySubmittedBanner = document.getElementById('already-submitted-banner');
+
+  function lockSubmission() {
+    localStorage.setItem(SUBMISSION_LOCK_KEY, 'true');
+  }
+
+  function checkSubmissionLock() {
+    if (localStorage.getItem(SUBMISSION_LOCK_KEY) === 'true') {
+      if (alreadySubmittedBanner) alreadySubmittedBanner.style.display = 'block';
+      const btn = document.getElementById('submit-btn');
+      if (btn) { btn.disabled = true; btn.textContent = 'Déjà soumis depuis cet appareil'; }
+    }
+  }
+  checkSubmissionLock();
+
+  const resetLink = document.getElementById('reset-submission-lock');
+  if (resetLink) {
+    resetLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem(SUBMISSION_LOCK_KEY);
+      window.location.reload();
+    });
+  }
+
   // 5. Lieu d'affectation
   const lieuSelect = document.getElementById('lieu_affectation');
   const secGeneralBlock = document.getElementById('bloc-secretariat-general');
@@ -177,7 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
         body: encodeForNetlify(dataObj)
       });
 
-      if (response.ok) {
+            if (response.ok) {
+        lockSubmission();
         const redirectTo = form.querySelector('input[name="_next"]');
         window.location.href = redirectTo ? redirectTo.value : 'merci.html';
       } else {
