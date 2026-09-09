@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+ const fonctionSelect = document.getElementById('fonction');
   const fonctionSubFields = {
     'Infirmier superviseur': document.getElementById('field-activite-supervision'),
     'Autre': document.getElementById('field-autre-fonction')
