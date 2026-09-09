@@ -57,6 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   checkSubmissionLock();
+    window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      checkSubmissionLock();
+    }
+  });
   const resetLink = document.getElementById('reset-submission-lock');
   if (resetLink) {
     resetLink.addEventListener('click', (e) => {
