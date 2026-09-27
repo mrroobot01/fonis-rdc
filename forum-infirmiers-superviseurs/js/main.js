@@ -5,16 +5,31 @@
 document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.classList.add('js-ready');
 
-  /* Mobile nav toggle -------------------------------------------------- */
+    /* Mobile nav toggle -------------------------------------------------- */
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.main-nav');
   if (toggle && nav) {
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
+    function closeNav() {
+      nav.classList.remove('is-open');
+      toggle.classList.remove('is-open');
+      overlay.classList.remove('is-visible');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
     toggle.addEventListener('click', () => {
       const open = nav.classList.toggle('is-open');
+      toggle.classList.toggle('is-open', open);
+      overlay.classList.toggle('is-visible', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
+
+    overlay.addEventListener('click', closeNav);
     nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => nav.classList.remove('is-open'));
+      a.addEventListener('click', closeNav);
     });
   }
 

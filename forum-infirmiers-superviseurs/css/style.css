@@ -214,7 +214,20 @@ button{font-family:inherit;}
 }
 .nav-toggle span::before{position:absolute;top:-6px;}
 .nav-toggle span::after{position:absolute;top:6px;}
+.nav-toggle.is-open span{background:transparent;}
+.nav-toggle.is-open span::before{transform:translateY(6px) rotate(45deg);}
+.nav-toggle.is-open span::after{transform:translateY(-6px) rotate(-45deg);}
 
+.nav-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(10,20,30,.55);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .22s ease;
+  z-index:45;
+}
+.nav-overlay.is-visible{opacity:1;pointer-events:auto;}
 /* --------------------------------------------------------------------------
    Buttons
    -------------------------------------------------------------------------- */
@@ -952,19 +965,21 @@ legend{padding:0;}
   .contact-grid{grid-template-columns:1fr;}
 }
 @media (max-width:720px){
-  .main-nav{
+    .main-nav{
     position:fixed;
-    inset:69px 0 0 0;
+    inset:0;
     background:var(--paper-0);
     flex-direction:column;
     align-items:stretch;
-    padding:18px;
+    padding:90px 24px 24px;
     gap:4px;
     transform:translateX(100%);
     transition:transform .22s ease;
     overflow-y:auto;
+    z-index:60;
   }
   .main-nav.is-open{transform:translateX(0);}
+  .nav-toggle{position:relative;z-index:70;}
   .main-nav a{padding:13px 14px;font-size:16px;}
   .main-nav .btn{margin:10px 2px 0;}
   .nav-toggle{display:flex;}
