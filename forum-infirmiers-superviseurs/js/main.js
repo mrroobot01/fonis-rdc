@@ -3,6 +3,7 @@
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    document.documentElement.classList.add('js-ready');
 
   /* Mobile nav toggle -------------------------------------------------- */
   const toggle = document.querySelector('.nav-toggle');

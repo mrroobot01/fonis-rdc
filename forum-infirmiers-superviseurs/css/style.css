@@ -929,8 +929,11 @@ legend{padding:0;}
 /* --------------------------------------------------------------------------
    Reveal on scroll
    -------------------------------------------------------------------------- */
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease, transform .55s ease;}
-.reveal.is-visible{opacity:1;transform:translateY(0);}
+.reveal{opacity:1;transform:none;transition:opacity .55s ease, transform .55s ease;}
+@media (min-width:1px){
+  .js-ready .reveal{opacity:0;transform:translateY(14px);}
+  .js-ready .reveal.is-visible{opacity:1;transform:translateY(0);}
+}
 
 /* --------------------------------------------------------------------------
    Responsive
