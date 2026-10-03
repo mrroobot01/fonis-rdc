@@ -1,0 +1,13 @@
+.contact-split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:start;
+}
+.contact-split .leader-photo{
+  max-width:260px;
+  margin-bottom:20px;
+}
+@media (max-width:860px){
+  .contact-split{grid-template-columns:1fr;}
+}
